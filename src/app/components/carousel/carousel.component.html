@@ -1,0 +1,57 @@
+<div class="section" id="carousel">
+        <div class="container">
+            <div class="tim-title">
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto">
+                    <div class="card page-carousel">
+                        <ngb-carousel>
+                            
+                            <ng-template ngbSlide>
+                                <div routerLinkActive="active">
+                                    <a [routerLink]="['/rpn']"><img src="../assets/img/algorithms.jpg" alt="Reverse Polish Notation"></a>
+                                </div>
+                                    
+                                <div class="carousel-caption">
+                                    <h1>Reverse Polish Notation</h1>
+                                </div>
+                            </ng-template>
+                            <ng-template ngbSlide>
+                                <div routerLinkActive="active">
+                                    <a [routerLink]="['/morse']"><img src="../assets/img/morse_carousel.jpg" alt="Morse Code"></a>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h1>Morse Code</h1>
+                                </div>
+                            </ng-template>
+                            <!-- <ng-template ngbSlide>
+                                    <a href="" target="_blank"><img src="../assets/img/morse.png" alt="Random second slide"></a>
+                                <div class="carousel-caption">
+                                    <p style="color:red">Braille</p>
+                                </div>
+                            </ng-template>
+                            <ng-template ngbSlide>
+                                <a href="" target="_blank"><img src="../assets/img/joshua-stannard.jpg" alt="Random third slide"></a>
+                                <div class="carousel-caption">
+                                    <p>Number Conversion</p>
+                                </div>
+                            </ng-template>
+                            <ng-template ngbSlide>
+                                <a href="" target="_blank"><img src="../assets/img/joshua-stannard.jpg" alt="Random third slide"></a>
+                                <div class="carousel-caption">
+                                    <p>Color Conversion</p>
+                                </div>
+                            </ng-template>-->
+                            <ng-template ngbSlide> 
+                                <a href="" target="_blank"><img src="../assets/img/joshua-stannard.jpg" alt="Random third slide"></a>
+                                <div class="carousel-caption">
+                                    <p>Currency Conversion</p>
+                                </div>
+                            </ng-template> 
+                        </ngb-carousel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

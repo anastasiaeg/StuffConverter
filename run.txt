@@ -1,0 +1,6 @@
+npm install bootstrap --save
+npm install popper.js --save
+npm install jquery --save
+npm i @ng-bootstrap/ng-bootstrap --save
+npm i --save nouislider ng2-nouislider
+npm install jw-bootstrap-switch-ng2 --save
