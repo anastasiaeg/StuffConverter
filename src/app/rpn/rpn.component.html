@@ -7,9 +7,9 @@
             <button type="button" class="btn btn-round" (click)="onSwitch()">Switch</button>
             <br /><br />
             <div class="form-group">
-                <input class="form-control" [(ngModel)]="given" (keypress)="_keyPress($event)" placeholder="enter expression">
+                <input class="form-control" [(ngModel)]="given" (keypress)="_keyPress($event)" (keyup)="_keyUp($event)" placeholder="enter expression">
             </div>
-            <button type="button" class="btn" (click)="isExpression?calculateToRPN():calculateToRPN()">Submit</button>
+            <button type="button" class="btn" (click)="isExpression?calculateFromRPN():calculateToRPN()">Submit</button>
             <h2>{{output}}</h2>
         </div>
     </div>

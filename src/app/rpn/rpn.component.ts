@@ -10,8 +10,10 @@ import { PatternValidator } from '@angular/forms';
 export class RPNComponent implements OnInit {
 
   given: string = ""
+  input: string = ""
   isExpression: boolean = true
   previous: string = ""
+  output: string = ""
   
   constructor() { }
 
@@ -21,35 +23,39 @@ export class RPNComponent implements OnInit {
   }
 
   _keyPress(event: any) {
-    const pattern = /[0-9+-\/*()\^]\ /;
+    const pattern = /[0-9()+\-/*\^\ ]/g
     let inputChar = String.fromCharCode(event.charCode);
     var key = event.keyCode || event.charCode
     console.log('key', key)
-    if (key !== 97 && key !== 8 && key !== 118 && key != 112 && !pattern.test(inputChar)) {
+    //c = 99 , v = 118, x = 120, a = 97, back = 8, move = 37-40
+    if (pattern.test(inputChar) || key === 46 || key === 37 || key === 39 || key === 8
+      || (event.ctrlKey && ( key === 99 || key === 118 || key === 120 || key === 97))) {
+      //
+    } else {
       event.preventDefault();
       return
     }
 
-    if (this.given === "") {
-      if (inputChar === "+" || inputChar === "-"
-          || inputChar === "*" || inputChar === "/") {
-        event.preventDefault();
-        return
-      } else {
-        this.previous = "num"
-      }
+    
+    if (this.isExpression) {
+      this.calculateFromRPN()
     } else {
-      if (inputChar === "+" || inputChar === "/"
-      || inputChar === "-" || inputChar === "*") {
-        if (this.previous === "op") {
-          event.preventDefault();
-          return
-        }
-        this.previous = "op"
-      } else {
-        this.previous = "num"
-      }
+      this.calculateTo()
     }
+  }
+
+  _keyUp(event:any) {
+    const operationsplus = /[()+\-/*\^]/g
+    this.input = this.given.replace(operationsplus, ' ' + '$&' + ' ');
+    console.log('newthing', this.input)
+  }
+
+  calculateFromRPN() {
+    console.log('hehe');
+  }
+
+  calculateTo() {
+    
   }
 
   calculateToRPN() {
